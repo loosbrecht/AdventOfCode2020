@@ -27,3 +27,15 @@ Day1/.idea/
 Day1/out/
 
 *.iml
+libraries/
+misc.xml
+modules.xml
+vcs.xml
+
+src/main/.DS_Store
+
+out/
+
+.idea/
+
+.DS_Store
