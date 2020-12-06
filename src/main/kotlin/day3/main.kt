@@ -1,9 +1,10 @@
 package main.kotlin.day3
 
+import main.kotlin.util.readInputForDay
 import java.io.File
 
 fun main() {
-    val allLines = readFileToLines("input/day3.txt")
+    val allLines = readInputForDay(3)
     val stepList = listOf<Steps>(
         Steps(1, 1),
         Steps(3, 1), //part1
@@ -50,8 +51,4 @@ class Pos(var x: Int, var y: Int, val step: Steps, private val rightLimit: Int) 
 
 fun isATree(pos: Pos, allLines: List<String>): Boolean {
     return allLines[pos.y][pos.x] == '#'
-}
-
-fun readFileToLines(fileName: String): List<String> {
-    return File(fileName).readLines()
 }

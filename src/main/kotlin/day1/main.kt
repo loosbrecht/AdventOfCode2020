@@ -1,10 +1,11 @@
 package main.kotlin.day1
 
+import main.kotlin.util.readInputForDay
 import java.io.File
 
 fun main() {
 
-    val inputValues = readFileLineByLineUsingForEachLine("input/day1.txt")
+    val inputValues = readInputForDay(1).map { it.toInt() }.sorted()
     println(solvePart1(inputValues))
     println(solvePart2(inputValues))
 
@@ -33,8 +34,4 @@ fun solvePart2(inputValues: List<Int>): Int {
         }
     }
     return 0
-}
-
-fun readFileLineByLineUsingForEachLine(fileName: String): List<Int> {
-    return File(fileName).readLines().map { it.toInt() }.sorted()
 }

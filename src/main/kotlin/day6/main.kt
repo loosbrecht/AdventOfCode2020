@@ -1,9 +1,11 @@
 package main.kotlin.day6
 
-import java.io.File
+import main.kotlin.util.readInputForDay
+
 
 fun main() {
-    val lines = readFileToLines("input/day6.txt")
+
+    val lines = readInputForDay(6)
     val totalAnswers = collectAllAnswers(lines).map { countAnswersFromGroup(it) }.sum()
     val totalAnswersInCommon = collectAllAnswers(lines).map { countAnswersInCommon(it) }.sum()
     println(totalAnswers)
@@ -37,6 +39,3 @@ fun countAnswersFromGroup(group: List<String>): Int {
 }
 
 
-fun readFileToLines(fileName: String): List<String> {
-    return File(fileName).readLines()
-}

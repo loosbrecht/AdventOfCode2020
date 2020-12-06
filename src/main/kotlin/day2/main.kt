@@ -1,9 +1,10 @@
 package main.kotlin.day2
 
+import main.kotlin.util.readInputForDay
 import java.io.File
 
 fun main() {
-    val allLines = readFileToLines("input/day2.txt").map { splitLineInInput(it) }
+    val allLines = readInputForDay(2).map { splitLineInInput(it) }
     val solutionPart1 = allLines.filter { it.validatePar1() }.count()
     val solutionPart2 = allLines.filter { it.validatePart2() }.count()
     println(solutionPart1)
@@ -19,10 +20,6 @@ class Input(private val lower: Int, private val higher: Int, private val key: Ch
     fun validatePart2(): Boolean {
         return (password[lower - 1] == key).xor(password[higher - 1] == key)
     }
-}
-
-fun readFileToLines(fileName: String): List<String> {
-    return File(fileName).readLines()
 }
 
 fun splitLineInInput(line: String): Input {

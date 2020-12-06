@@ -1,19 +1,16 @@
 package main.kotlin.day5
 
+import main.kotlin.util.readInputForDay
 import java.io.File
 import kotlin.math.ceil
 import kotlin.math.floor
 
 fun main() {
-    val idList = readFileToLines("input/day5.txt").map { findSeating(it) }.sorted()
+    val idList = readInputForDay(5).map { findSeating(it) }.sorted()
     val maxId = idList.maxOrNull()
     val missingId = findMissingId(idList)
     println("Max seatID $maxId")
     println("Missing seatID $missingId")
-}
-
-fun readFileToLines(fileName: String): List<String> {
-    return File(fileName).readLines()
 }
 
 fun findMissingId(idList: List<Int>): Int {

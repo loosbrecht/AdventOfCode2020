@@ -1,9 +1,10 @@
 package main.kotlin.day4
 
+import main.kotlin.util.readInputForDay
 import java.io.File
 
 fun main() {
-    val batch = createPassportBatch(readFileToLines("input/day4.txt"))
+    val batch = createPassportBatch(readInputForDay(4))
     val validPassportsPart1 = batch.filter { it.valid() }.count()
     println(validPassportsPart1)
     val validPassportsPart2 = batch.filter { it.valid() }.filter { it.validFields() }.count()
@@ -63,8 +64,4 @@ fun createPassportBatch(lines: List<String>): List<Passport> {
     }
     batch.add(currentPassport)
     return batch
-}
-
-fun readFileToLines(fileName: String): List<String> {
-    return File(fileName).readLines()
 }
