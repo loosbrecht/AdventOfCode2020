@@ -15,3 +15,9 @@ fun readOtherInputForDay(day: Int,key:String):List<String>{
 private fun readLines(fileName: String): List<String> {
     return File(fileName).readLines()
 }
+
+fun <T> List<T>.safeSubList(fromIndex: Int, toIndex: Int): List<T> =
+    this.subList(fromIndex.coerceAtLeast(0), toIndex.coerceAtMost(this.size))
+
+fun String.safeSubSequence(fromIndex: Int, toIndex: Int): CharSequence =
+    this.subSequence(fromIndex.coerceAtLeast(0), toIndex.coerceAtMost(this.length))
