@@ -1,3 +1,6 @@
+package main.kotlin.day13
+
+
 import main.kotlin.util.readInputForDay
 import main.kotlin.util.readSmallInputForDay
 import java.lang.Math.abs
